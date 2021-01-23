@@ -1,8 +1,7 @@
-import hireItems from "../hireItems";
+import hireItemForm from "../hireItemForm";
 import newUser from "./newUser";
 
-const hireForm = 
-`<form id="user-login">
+const loginForm = `<form id="user-login">
   <h4>Login</h4>
     <div class="form-group">
       <label for="username">Username</label>
@@ -18,33 +17,33 @@ const hireForm =
   <button id="user-registration" class="btn btn-outline-info">Register</button>
   `;
 
-  const userLogin = () => {
-      $(document).on("submit", "#user-login", async (event) => {
-          event.preventDefault();
+const userLogin = () => {
+  $(document).on("submit", "#user-login", async (e) => {
+    e.preventDefault();
 
-          const formData = {
-              userName: $("input[name='userName']").val(),
-              password: $("input[name='password']").val()
-          };
-          try {
-              const res = await $.ajax({
-                  type: "POST",
-                  url: "/user/login",
-                  contentType: "application/JSON",
-                  data: JSON.stringify(formData),
-              });
-              $("body").empty();
-              $("body").append(hireItems()); 
-          } catch(error) {
-              $("body").append("<h6>Username or Password is incorrect<h6>");
-          }
+    const formData = {
+      userName: $("input[name='userName']").val(),
+      password: $("input[name='password']").val(),
+    };
+    try {
+      const res = await $.ajax({
+        type: "POST",
+        url: "/user/login",
+        contentType: "application/JSON",
+        data: JSON.stringify(formData),
       });
-      return hireForm;
-  };
-
-  $(document).on("click", "#user-registration", () => {
       $("body").empty();
-      $("body").append(newUser());
-  })
+      $("body").append(hireItems());
+    } catch (error) {
+      $("body").append("<h6>Username or Password is incorrect<h6>");
+    }
+  });
+  return loginForm;
+};
 
-  export default userLogin;
+$(document).on("click", "#user-registration", () => {
+  $("body").empty();
+  $("body").append(hireItemForm());
+});
+
+export default userLogin;

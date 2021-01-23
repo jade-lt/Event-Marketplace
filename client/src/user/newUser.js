@@ -16,11 +16,11 @@ const registrationForm = `
   `;
 
 const newUser = () => {
-  $(document).on("submit", "#new-user", async (event) => {
-    event.preventDefault();
+  $(document).on("submit", "#new-user", async (e) => {
+    e.preventDefault();
 
     const formData = {
-      userName: $("input[name='userName']").val(),
+      userName: $("input[name='username']").val(),
       password: $("input[name='password']").val(),
     };
     try {
@@ -33,7 +33,7 @@ const newUser = () => {
       $("body").empty();
       $("body").append(userLogin());
     } catch (error) {
-      $("body").append("<h6>Unable to create user<h6>");
+      $("body").append("<h6>Unable to create new user<h6>");
     }
   });
   return registrationForm;
