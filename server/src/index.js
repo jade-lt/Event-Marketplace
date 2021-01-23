@@ -2,6 +2,7 @@ console.log("Event marketplace app is running");
 
 const express = require("express");
 const mongoose = require("mongoose");
+const session = require("express-session");
 
 const internalRouter = require("./routes/internalRoutes");
 const hireItemRouter = require("./routes/hireItemRoutes");
@@ -16,9 +17,14 @@ mongoose.connect("mongodb://localhost:27017", {
 
 const port = 3000;
 
-
-
 app.use(express.json());
+app.use(
+  session({
+    secret: "random secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.use("/internal", internalRouter);
 app.use("/hire-items", hireItemRouter);

@@ -8,4 +8,28 @@ router.get("/", (req, res) => res.send("this is the user router"));
 
 router.get("/my-items", (req, res) => res.send("this is where my items will be displayed"));
 
+router.get("/new-session", (req, res) => {
+    req.session.testProperty = "the session is running";
+    res.send("session started OK");
+});
+
+router.get("/test-session", (req, res) => {
+    res.send(req.session.testProperty);
+    console.log("OK")
+});
+
+router.get("/expire-session", (req, res) => {
+    req.session.destroy(() => res.send("the session has expired"));
+});
+
+router.post("/register", (req, res) => {
+    const body = req.body;
+    const passwordHash = bcrypt.hashSync(body.password, 10);
+    const user = { userName: body.userName, password: passwordHash };
+    console.log("user registered", body, passwordHash, user);
+    UserModel.create(user).then((userData) => {
+        res.send(userData);
+    })
+})
+
 module.exports = router;
