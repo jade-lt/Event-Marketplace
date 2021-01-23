@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 
 const internalRouter = require("./routes/internalRoutes");
 const hireItemRouter = require("./routes/hireItemRoutes");
+const userRouter = require("./routes/userRoutes");
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.json());
 
 app.use("/internal", internalRouter);
 app.use("/hireItems", hireItemRouter);
+app.use("/user", userRouter);
 
 app.listen(port, () =>
   console.log(`event app is listening at http://localhost:${port}"`)
