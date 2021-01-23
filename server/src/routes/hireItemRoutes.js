@@ -26,7 +26,19 @@ router.patch("/update-item/:id", (req, res) => {
     })
     .catch(() => {
       console.log("something went wrong");
-      res.status(404).send("this hire item doesn't exist");
+      res.status(404).send("this item doesn't exist");
+    });
+});
+
+router.delete("/delete-item/:id", (req, res) => {
+    HireItemModel.findByIdAndDelete(req.params.id)
+    .then((data) => {
+        console.log("item deleted successfully");
+        res.send(data);
+    })
+    .catch(() => {
+        console.log("something went wrong");
+        res.status(404).send("this item doesn't exist");
     });
 });
 

@@ -21,7 +21,7 @@ const port = 3000;
 app.use(express.json());
 
 app.use("/internal", internalRouter);
-app.use("/hireItems", hireItemRouter);
+app.use("/hire-items", hireItemRouter);
 app.use("/user", userRouter);
 
 app.listen(port, () =>
