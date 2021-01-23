@@ -3,6 +3,7 @@ console.log("Event marketplace app is running");
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
+const cors = require("cors");
 
 const internalRouter = require("./routes/internalRoutes");
 const hireItemRouter = require("./routes/hireItemRoutes");
@@ -25,6 +26,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(cors());
 
 app.use("/internal", internalRouter);
 app.use("/hire-items", hireItemRouter);
