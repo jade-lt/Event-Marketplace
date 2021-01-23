@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 
 const hireItemSchema = mongoose.Schema({
     itemName: String,
-    numberAvailable: Number,
+    itemColor: String,
     dimensions: String,
+    numberAvailable: Number,
     costPerHire: String,
     available: Boolean
 });
