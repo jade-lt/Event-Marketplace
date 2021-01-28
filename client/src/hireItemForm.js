@@ -2,6 +2,10 @@ const hireItemForm = `
 <form id="hire-item-form">
   <h4>Hire Items</h4>
   <div class="form-group">
+  <label for="categoryId">Item Category</label>
+  <select name="categoryId" id="categories"></select>
+</div>
+  <div class="form-group">
     <label for="item-id">ID</label>
     <input type="text" class="form-control" id="item-id" placeholder="Only enter an Item ID when updating or deleting an item" name="item-id">
   </div>
@@ -44,10 +48,22 @@ const hireItemForm = `
 
 const newHireItem = () => {
 
+  const catergoryResponse = $.ajax({
+    type: "GET",
+    url: "/hire-items/category/all",
+  }).done((categories) => {
+    let optionsHtml = "";
+    categories.forEach((itemElement) => {
+      optionsHtml += `<option value=${itemElement._id}>${itemElement.name}</option>`;
+    });
+    $("#categories").append(optionsHtml);
+  });
+
   $(document).on("click", "#create-item", async (e) => {
     e.preventDefault();
 
     const reqBody = {
+      categoryId: $("#categories").val(),
       itemName: $("#name").val(),
       itemColor: $("#color").val(),
       dimensions: $("#size").val(),
@@ -59,7 +75,7 @@ const newHireItem = () => {
     const res = await $.ajax({
       type: "POST",
       url: "http://localhost:3000/hire-items/new-hire-item",
-      contentType: "application/JSON",
+      contentType: "application/json",
       data: JSON.stringify(reqBody),
     });
   });
@@ -68,6 +84,7 @@ const newHireItem = () => {
     e.preventDefault();
 
     const reqBody = {
+      categoryId: $("#categories").val(),
       itemName: $("#name").val(),
       itemColor: $("#color").val(),
       dimensions: $("#size").val(),
@@ -79,7 +96,7 @@ const newHireItem = () => {
     const res = await $.ajax({
       type: "PATCH",
       url: `http://localhost:3000/hire-items/update-item/${$("#item-id").val()}`,
-      contentType: "application/JSON",
+      contentType: "application/json",
       data: JSON.stringify(reqBody),
     });
   });
@@ -90,7 +107,7 @@ const newHireItem = () => {
     const res = await $.ajax({
       type: "DELETE",
       url: `http://localhost:3000/hire-items/delete-item/${$("#item-id").val()}`,
-      contentType: "application/JSON",
+      contentType: "application/json",
     });
   });
 
