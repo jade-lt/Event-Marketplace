@@ -28,7 +28,7 @@ const userLogin = () => {
     try {
       const res = await $.ajax({
         type: "POST",
-        url: "/user/login",
+        url: "/api/user/login",
         contentType: "application/json",
         data: JSON.stringify(formData),
       });

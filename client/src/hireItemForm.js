@@ -50,7 +50,7 @@ const newHireItem = () => {
 
   const catergoryResponse = $.ajax({
     type: "GET",
-    url: "/hire-items/category/all",
+    url: "/api/hire-items/category/all",
   }).done((categories) => {
     let optionsHtml = "";
     categories.forEach((itemElement) => {
@@ -74,7 +74,7 @@ const newHireItem = () => {
 
     const res = await $.ajax({
       type: "POST",
-      url: "http://localhost:3000/hire-items/new-hire-item",
+      url: "http://localhost:3000/api/hire-items/new-hire-item",
       contentType: "application/json",
       data: JSON.stringify(reqBody),
     });
@@ -95,7 +95,7 @@ const newHireItem = () => {
 
     const res = await $.ajax({
       type: "PATCH",
-      url: `http://localhost:3000/hire-items/update-item/${$("#item-id").val()}`,
+      url: `http://localhost:3000/api/hire-items/update-item/${$("#item-id").val()}`,
       contentType: "application/json",
       data: JSON.stringify(reqBody),
     });
@@ -106,7 +106,7 @@ const newHireItem = () => {
 
     const res = await $.ajax({
       type: "DELETE",
-      url: `http://localhost:3000/hire-items/delete-item/${$("#item-id").val()}`,
+      url: `http://localhost:3000/api/hire-items/delete-item/${$("#item-id").val()}`,
       contentType: "application/json",
     });
   });

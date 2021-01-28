@@ -29,8 +29,8 @@ app.use(
 app.use(cors());
 
 app.use("/internal", internalRouter);
-app.use("/hire-items", hireItemRouter);
-app.use("/user", userRouter);
+app.use("/api/hire-items", hireItemRouter);
+app.use("/api/user", userRouter);
 
 app.listen(port, () =>
   console.log(`event app is listening at http://localhost:${port}"`)
