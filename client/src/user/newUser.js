@@ -27,7 +27,7 @@ const newUser = () => {
       const res = await $.ajax({
         type: "POST",
         url: "/user/register",
-        contentType: "application/JSON",
+        contentType: "application/json",
         data: JSON.stringify(formData),
       });
       $("body").empty();

@@ -9,12 +9,12 @@ const internalRouter = require("./routes/internalRoutes");
 const hireItemRouter = require("./routes/hireItemRoutes");
 const userRouter = require("./routes/userRoutes");
 
-const app = express();
-
 mongoose.connect("mongodb://localhost:27017", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+const app = express();
 
 const port = 3000;
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const HireItemModel = require("../models/HireItemModel");
+const ItemCategoryModel = require("../models/ItemCategoryModel");
 
 const router = express.Router();
 
@@ -7,11 +8,43 @@ router.get("/", (req, res) => res.send("this is the hire items router"));
 
 router.get("/test", (req, res) => res.send("test OK"));
 
+router.get("all-hire", (req, res) => {
+  HireItemModel.find()
+  .populate("categoryId")
+  .then((hireitems) => {
+    res.send(hireitems);
+  })
+  .catch(() => {
+    res.status(500).send("unable to query hire items");
+  });
+});
+
 router.post("/new-hire-item", (req, res) => {
   const reqBody = req.body;
   HireItemModel.create(reqBody).then((data) => {
     console.log(data);
     res.send("item added successfully");
+  });
+});
+
+router.post("/category", (req, res) => {
+  const reqBody = req.body;
+  ItemCategoryModel.create(reqBody)
+  .then((dats) => {
+    res.send(data);
+  })
+  .catch(() => {
+    res.status(500).send("unable to create category");
+  });
+});
+
+router.get("/category/all", (req, res) => {
+  ItemCategoryModel.find()
+  ,then((categories) => {
+    res.send(categories);
+  })
+  .catch((err) => {
+    res.status(500).send("error loading categories");
   });
 });
 

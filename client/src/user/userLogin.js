@@ -13,7 +13,7 @@ const loginForm = `<form id="user-login">
     </div>
     <button type="submit" class="btn btn-outline-info">Login</button>
   </form>
-  <h4>Not a member? Register now!</h4>
+  <h5>Not a member? Register now!</h5>
   <button id="user-registration" class="btn btn-outline-info">Register</button>
   `;
 
@@ -22,18 +22,18 @@ const userLogin = () => {
     e.preventDefault();
 
     const formData = {
-      userName: $("input[name='userName']").val(),
+      userName: $("input[name='username']").val(),
       password: $("input[name='password']").val(),
     };
     try {
       const res = await $.ajax({
         type: "POST",
         url: "/user/login",
-        contentType: "application/JSON",
+        contentType: "application/json",
         data: JSON.stringify(formData),
       });
       $("body").empty();
-      $("body").append(hireItems());
+      $("body").append(hireItemForm());
     } catch (error) {
       $("body").append("<h6>Username or Password is incorrect<h6>");
     }
@@ -43,7 +43,7 @@ const userLogin = () => {
 
 $(document).on("click", "#user-registration", () => {
   $("body").empty();
-  $("body").append(hireItemForm());
+  $("body").append(newUser());
 });
 
 export default userLogin;
