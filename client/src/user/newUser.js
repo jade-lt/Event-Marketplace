@@ -30,8 +30,8 @@ const newUser = () => {
         contentType: "application/json",
         data: JSON.stringify(formData),
       });
-      $("#page-body").empty();
-      $("#page-body").append(userLogin());
+      $("body").empty();
+      $("body").append(userLogin());
     } catch (error) {
       $("body").append("<h6>Unable to create new user<h6>");
     }

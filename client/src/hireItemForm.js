@@ -1,17 +1,16 @@
 const hireItemForm = `
 <form id="hire-item-form">
-  <h4>Hire Items</h4>
   <div class="form-group">
-  <label for="categoryId">Item Category</label>
+  <label for="categoryId">Category</label>
   <select name="categoryId" id="categories"></select>
 </div>
   <div class="form-group">
     <label for="item-id">ID</label>
-    <input type="text" class="form-control" id="item-id" placeholder="Only enter an Item ID when updating or deleting an item" name="item-id">
+    <input type="text" class="form-control" id="item-id" placeholder="*Only enter an ID when updating or deleting*" name="item-id">
   </div>
     <div class="form-group">
       <label for="item-name">Item</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter item name" name="item-name">
+      <input type="text" class="form-control" id="name" placeholder="Item name" name="item-name">
     </div>
     <div class="form-group">
       <label for="color">Colour</label>
@@ -40,9 +39,9 @@ const hireItemForm = `
       <label class="form-check-label" for="availableNo">No</label>
     </div>
   </fieldset>
-    <button type="button" id="create-item" class="btn btn-outline-info">Add Item</button>
-    <button type="button" id="update-item" class="btn btn-outline-info">Update Item</button>
-    <button type="button" id="delete-item" class="btn btn-outline-info">Delete Item</button>
+    <button type="button" id="create-item" class="btn btn-outline-info">Add</button>
+    <button type="button" id="update-item" class="btn btn-outline-info">Update</button>
+    <button type="button" id="delete-item" class="btn btn-outline-info">Delete</button>
   </form>
 `;
 
