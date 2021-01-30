@@ -1,7 +1,9 @@
 import hireItemForm from "../hireItemForm";
 import newUser from "./newUser";
+import userDashboard from "./userDashboard";
 
-const loginForm = `<form id="user-login">
+const loginForm = `
+<form id="user-login">
   <h4>Login</h4>
     <div class="form-group">
       <label for="username">Username</label>
@@ -33,7 +35,7 @@ const userLogin = () => {
         data: JSON.stringify(formData),
       });
       $("body").empty();
-      $("body").append(hireItemForm());
+      $("body").append(userDashboard());
     } catch (error) {
       $("body").append("<h6>Username or Password is incorrect<h6>");
     }
