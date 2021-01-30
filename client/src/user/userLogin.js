@@ -3,7 +3,10 @@ import newUser from "./newUser";
 import userDashboard from "./userDashboard";
 
 const loginForm = `
-<form id="user-login">
+<div class="container">
+  <div class="row">
+<div id="user-login" class="col-sm">
+<form>
   <h4>Login</h4>
     <div class="form-group">
       <label for="username">Username</label>
@@ -15,8 +18,14 @@ const loginForm = `
     </div>
     <button type="submit" class="btn btn-outline-info">Login</button>
   </form>
+  </div>
+  <div id="register-now" class="col-sm">
   <h5>Not a member? Register now!</h5>
   <button id="user-registration" class="btn btn-outline-info">Register</button>
+  </div>
+  </div>
+  
+ 
   `;
 
 const userLogin = () => {
