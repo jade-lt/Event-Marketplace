@@ -1,12 +1,22 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const UserModel = require("../models/UserModel");
+const HireItemModel = require("../models/HireItemModel");
 
 const router = express.Router();
 
 router.get("/", (req, res) => res.send("this is the user router"));
 
-router.get("/my-items", (req, res) => res.send("this is where my items will be displayed"));
+router.get("/my-items", (req, res) => {
+    HireItemModel.find()
+    .populate("categoryId")
+    .then((hireitems) => {
+      res.send(hireitems);
+    })
+    .catch(() => {
+      res.status(500).send("unable to query hire items");
+    });
+  });
 
 router.get("/new-session", (req, res) => {
     req.session.testProperty = "the session is running";
