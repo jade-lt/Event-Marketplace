@@ -19,7 +19,7 @@ router.post("/new-hire-item", (req, res) => {
 router.post("/category", (req, res) => {
   const reqBody = req.body;
   ItemCategoryModel.create(reqBody)
-  .then((dats) => {
+  .then((data) => {
     res.send(data);
   })
   .catch(() => {
@@ -29,7 +29,7 @@ router.post("/category", (req, res) => {
 
 router.get("/category/all", (req, res) => {
   ItemCategoryModel.find()
-  ,then((categories) => {
+  .then((categories) => {
     res.send(categories);
   })
   .catch((err) => {

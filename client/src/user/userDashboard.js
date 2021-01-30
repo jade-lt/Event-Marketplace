@@ -16,49 +16,29 @@ const displayDashboard = () => {
 
     $(document).on("click", "#update-my-items", async (e) => {
         e.preventDefault();
+        console.log("update items button clicked");
         try {
-            $("body").empty();
             $("body").append(hireItemForm());
           } catch (error) {
             $("body").append("<h6>Unable to load update form<h6>");
           }
     });
 
-    // $(document).on("click", "#show-my-items", async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const myItems = $.ajax({
-    //                 type: "GET",
-    //                 url: "/api/user/my-items",
-    //                 contentType: "application/json",
-    //               });
-    //         $("#page-body").append(myItems);
-    //       } catch (error) {
-    //         $("#page-body").append("<h6>Unable to load your items<h6>");
-    //       }
-    // });
+    $(document).on("click", "#show-my-items", async (e) => {
+        e.preventDefault();
+        console.log("show items button clicked");
+        try {
+            const myItems = $.ajax({
+                    type: "GET",
+                    url: "/api/user/my-items",
+                    contentType: "application/json",
+                  });
+            $("#page-body").append(myItems);
+          } catch (error) {
+            $("#page-body").append("<h6>Unable to load your items<h6>");
+          }
+    });
     return userDashboard;
 };
 
 export default displayDashboard;
-
-
-
-// // $("#page-body").append(myItems);
-
-// const loginForm = `
-// <form id="user-login">
-//   <h4>Login</h4>
-//     <div class="form-group">
-//       <label for="username">Username</label>
-//       <input type="text" class="form-control" placeholder="Enter your username" name="username">
-//     </div>
-//     <div class="form-group">
-//       <label for="password">Password</label>
-//       <input type="password" class="form-control" placeholder="Enter your password" name="password">
-//     </div>
-//     <button type="submit" class="btn btn-outline-info">Login</button>
-//   </form>
-//   <h5>Not a member? Register now!</h5>
-//   <button id="user-registration" class="btn btn-outline-info">Register</button>
-//   `;
