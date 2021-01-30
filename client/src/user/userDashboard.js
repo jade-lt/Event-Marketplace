@@ -1,4 +1,5 @@
 import hireItemForm from "../hireItemForm";
+import usersItems from "../usersItems";
 
 const userDashboard = `
     <div id="dashboard-header" class="container">
@@ -21,17 +22,9 @@ const userDashboard = `
 `;
 
 const displayDashboard = () => {
-  // $.get(`http://localhost:3000/api/user/my-items`, (data) => {
-  //       console.log(data);
-
-  //     const itemName = data[0].itemName;
-  //       console.log(itemName);
-  //       $("#test").html(`This is the item name ${itemName}`);
-
-  // });
-
   $(document).ready(function () {
     $("#update-items").append(hireItemForm());
+    $("#user-items").append(usersItems());
   });
   return userDashboard;
 };
