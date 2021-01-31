@@ -1,13 +1,5 @@
 const hireItemForm = `
 <form id="hire-item-form">
-  <div class="form-group">
-  <label for="categoryId">Category</label>
-  <select name="categoryId" id="categories"></select>
-</div>
-  <div class="form-group">
-    <label for="item-id">ID</label>
-    <input type="text" class="form-control" id="item-id" placeholder="*Only enter an ID when updating or deleting*" name="item-id">
-  </div>
     <div class="form-group">
       <label for="item-name">Item</label>
       <input type="text" class="form-control" id="name" placeholder="Item name" name="item-name">
@@ -29,16 +21,24 @@ const hireItemForm = `
       <input type="text" class="form-control" id="cost" placeholder="Cost per hire" name="cost">
     </div>
     <fieldset class="form-group">
-    <legend class="col-form-label">Currently available?</legend>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" id="availableYes" name ="available" value="true">
-      <label class="form-check-label" for="availableYes">Yes</label>
+      <legend class="col-form-label">Currently available?</legend>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="availableYes" name ="available" value="true">
+        <label class="form-check-label" for="availableYes">Yes</label>
     </div>
     <div class="form-check form-check-inline">
       <input class="form-check-input" type="radio" id="availableNo" name ="available" value="false">
       <label class="form-check-label" for="availableNo">No</label>
     </div>
-  </fieldset>
+    </fieldset>
+    <div class="form-group">
+    <label for="categoryId">Category</label>
+    <select name="categoryId" id="categories"></select>
+  </div>
+    <div class="form-group">
+      <label for="item-id">ID</label>
+      <input type="text" class="form-control" id="item-id" placeholder="*Only enter an ID when updating or deleting*" name="item-id">
+  </div>
     <button type="button" id="create-item" class="btn btn-outline-info">Add</button>
     <button type="button" id="update-item" class="btn btn-outline-info">Update</button>
     <button type="button" id="delete-item" class="btn btn-outline-info">Delete</button>

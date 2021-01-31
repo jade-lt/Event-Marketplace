@@ -7,7 +7,7 @@ const loginForm = `
   <div class="row">
 <div id="user-login" class="col-sm">
 <form>
-  <h4>Login</h4>
+  <h4 class="section-heading">Login</h4>
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" placeholder="Enter your username" name="username">
@@ -20,8 +20,8 @@ const loginForm = `
   </form>
   </div>
   <div id="register-now" class="col-sm">
-  <h5>Not a member? Register now!</h5>
-  <button id="user-registration" class="btn btn-outline-info">Register</button>
+  <h4 class="section-heading">Not a member?</h5>
+  <button id="user-registration" class="btn btn-outline-info">Sign Up</button>
   </div>
   </div>
   
@@ -46,7 +46,8 @@ const userLogin = () => {
       $("body").empty();
       $("body").append(userDashboard());
     } catch (error) {
-      $("body").append("<h6>Username or Password is incorrect<h6>");
+      alert("Username or Password is incorrect");
+      // $("body").append("<h6>Username or Password is incorrect<h6>");
     }
   });
   return loginForm;
