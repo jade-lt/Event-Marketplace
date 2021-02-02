@@ -22,3 +22,7 @@ When an item has been added, updated or deleted I would like the dashboard to be
 Future plans:
 
 I plan to add the option for each product/service to have a public-facing listing with availability calendars that are bookable in real time by clients, and a messaging platform between businesses and clients.
+
+Install instructions:
+
+Once cloned, start a terminal for both the client and server folders and run the "npm install" command in both to ensure you have the necessary dependencies. Then run the "npm start" command in both to start the servers. Open a browser and enter http://localhost:1234/ and this should open the app to the login page.

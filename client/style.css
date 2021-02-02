@@ -40,10 +40,6 @@
   margin: 2%
 }
 
-/* .user-item-names {
-  text-align: center;
-} */
-
 .user-items-list {
   margin: 1%;
   /* border-style: ridge; */
@@ -59,11 +55,3 @@
 .item-img {
   max-width: 50%;
 }
-
-/* #user-login {
-  background-color: rgb(240, 217, 221);
-}
-
-#register-now {
-  background-color: rgb(187, 187, 247);
-} */
