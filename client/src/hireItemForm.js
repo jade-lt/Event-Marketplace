@@ -49,17 +49,6 @@ const hireItemForm = `
 
 const newHireItem = () => {
 
-  const catergoryResponse = $.ajax({
-    type: "GET",
-    url: "/api/hire-items/category/all",
-  }).done((categories) => {
-    let optionsHtml = "";
-    categories.forEach((itemElement) => {
-      optionsHtml += `<option value=${itemElement._id}>${itemElement.name}</option>`;
-    });
-    $("#categories").append(optionsHtml);
-  });
-
   $(document).on("click", "#create-item", async (e) => {
     e.preventDefault();
 

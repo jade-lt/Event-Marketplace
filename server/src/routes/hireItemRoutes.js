@@ -16,27 +16,6 @@ router.post("/new-hire-item", (req, res) => {
   });
 });
 
-router.post("/category", (req, res) => {
-  const reqBody = req.body;
-  ItemCategoryModel.create(reqBody)
-  .then((data) => {
-    res.send(data);
-  })
-  .catch(() => {
-    res.status(500).send("unable to create category");
-  });
-});
-
-router.get("/category/all", (req, res) => {
-  ItemCategoryModel.find()
-  .then((categories) => {
-    res.send(categories);
-  })
-  .catch((err) => {
-    res.status(500).send("error loading categories");
-  });
-});
-
 router.patch("/update-item/:id", (req, res) => {
   HireItemModel.findByIdAndUpdate(req.params.id, req.body, {
     new: true,

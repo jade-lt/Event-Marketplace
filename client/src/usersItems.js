@@ -19,11 +19,11 @@ const displayUserItems = () => {
                     <br>Amount: ${itemData.numberAvailable}
                     <br>Cost: ${itemData.costPerHire}
                     <br>Currently Available for hire: ${itemData.available}
-                    <br>Category: ${itemData.categoryId}
                     <br>Item ID: ${itemData._id}
                 </p>
           </div>`
         );
+        
       }
     }
     returnItemData(itemDataArray);
