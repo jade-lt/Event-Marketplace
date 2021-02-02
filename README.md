@@ -10,7 +10,6 @@ The app includes log in/sign up functionality with encrypted passwords:
 Once logged in the user is taken to the dashboard which shows current listings and a form to either add a new listing or update/delete an existing one:
 
 ![Image of dashboard 1](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/dashboard-new-0.png)
-
 ![Image of dashboard 2](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/dashboard-new-2.png)
 
 The remaining issues with the app:
