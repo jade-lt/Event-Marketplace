@@ -4,7 +4,6 @@ const usersItems = `
 
 const displayUserItems = () => {
   $.get(`http://localhost:3000/api/user/my-items`, (data) => {
-
     const itemDataArray = Object.values(data);
 
     function returnItemData(arr) {
@@ -23,7 +22,6 @@ const displayUserItems = () => {
                 </p>
           </div>`
         );
-        
       }
     }
     returnItemData(itemDataArray);

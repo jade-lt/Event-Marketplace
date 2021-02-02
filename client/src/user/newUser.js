@@ -15,13 +15,13 @@ const registrationForm = `
       <label for="password">Password</label>
       <input type="password" class="form-control" placeholder="Enter a password" name="password">
     </div>
-    <button type="submit" class="btn btn-outline-info">Register</button>
+    <button type="submit" id="new-user" class="btn btn-outline-info">Register</button>
   </form>
   </div
   `;
 
 const newUser = () => {
-  $(document).on("submit", "#new-user", async (e) => {
+  $(document).on("click", "#new-user", async (e) => {
     e.preventDefault();
 
     const formData = {
