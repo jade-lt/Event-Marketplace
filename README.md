@@ -1,16 +1,24 @@
 # Event-Marketplace
 
-A place where an event planning, hire or services business can keep track of inventory levels, current pricing of their product/service, along with info on their own suppliers/cost for each product. 
+A working full-stack CRUD app for event planning/services/hire businesses, to keep track of inventory and current pricing, along with info on their own suppliers/cost to the business for each product. 
 
-In future I plan to add the option for each product/service to have a public facing listing with availability calendars that are book-able in real time by clients, along  and a messaging platform between bsuinesses and clients.
-
-The app inclues log in/sign up functionality with encrypted passwords:
+The app includes log in/sign up functionality with encrypted passwords:
 ![Image of Login page](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/login%20page.png)
 
 ![Image of rego page](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/rego%20page.png)
 
-Once logged in the user is taken to the dashboard which shows their current listings and a fom to either add a new listing or update/delete an existing one:
+Once logged in the user is taken to the dashboard which shows current listings and a form to either add a new listing or update/delete an existing one:
 
 ![Image of Login page](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/dashboard-1.png)
 
 ![Image of Login page](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/dashboard-2.png)
+
+The remaining issues with the app:
+
+The dashboard shows the full list of items that have been saved to the database - not items saved by that particular user.
+
+When an item has been added, updated or deleted I would like the dashboard to be automatically refreshed, however to see new items or changes, the user needs to refresh the page which takes them back to the login page.
+
+Future plans:
+
+I plan to add the option for each product/service to have a public-facing listing with availability calendars that are bookable in real time by clients, and a messaging platform between businesses and clients.
