@@ -13,6 +13,7 @@ const displayUserItems = () => {
         $("#item-list").append(
           `<div class="user-items-list">
             <h5 class="user-item-names">${itemData.itemName}</h5>
+            <img src="${itemData.imgUrl}" class="item-img"></img>
                 <p>Colour: ${itemData.itemColor}
                     <br>Size: ${itemData.dimensions}
                     <br>Amount: ${itemData.numberAvailable}

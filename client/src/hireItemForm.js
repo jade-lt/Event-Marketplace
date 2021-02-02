@@ -1,3 +1,5 @@
+import userDashboard from "./user/userDashboard";
+
 const hireItemForm = `
 <form id="hire-item-form">
     <div class="form-group">
