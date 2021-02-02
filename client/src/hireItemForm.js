@@ -7,6 +7,10 @@ const hireItemForm = `
       <input type="text" class="form-control" id="name" placeholder="Item name" name="item-name">
     </div>
     <div class="form-group">
+      <label for="image">Image Url</label>
+      <input type="text" class="form-control" id="image" placeholder="Image url of item" name="image">
+    </div>
+    <div class="form-group">
       <label for="color">Colour</label>
       <input type="text" class="form-control" id="color" placeholder="Item colour" name="item-color">
     </div>
@@ -19,8 +23,8 @@ const hireItemForm = `
       <input type="text" class="form-control" id="amount" placeholder="Number available" name="amount">
     </div>
     <div class="form-group">
-      <label for="cost">Cost</label>
-      <input type="text" class="form-control" id="cost" placeholder="Cost per hire" name="cost">
+      <label for="cost">Cost to Client</label>
+      <input type="text" class="form-control" id="cost" placeholder="Cost per item, per hire" name="cost">
     </div>
     <fieldset class="form-group">
       <legend class="col-form-label">Currently available?</legend>
@@ -34,13 +38,17 @@ const hireItemForm = `
     </div>
     </fieldset>
     <div class="form-group">
-    <label for="categoryId">Category</label>
-    <select name="categoryId" id="categories"></select>
+    <label for="item-supplier">Supplier</label>
+    <input type="text" class="form-control" id="item-supplier" placeholder="Supplier name" name="item-supplier">
+  </div>
+  <div class="form-group">
+    <label for="cost-to-business">Purchase Cost</label>
+    <input type="text" class="form-control" id="cost-to-business" placeholder="Cost to purchase, per item" name="cost-to-business">
   </div>
     <div class="form-group">
       <label for="item-id">ID</label>
       <input type="text" class="form-control" id="item-id" placeholder="*Only enter an ID when updating or deleting*" name="item-id">
-  </div>
+    </div>
     <button type="button" id="create-item" class="btn btn-outline-info">Add</button>
     <button type="button" id="update-item" class="btn btn-outline-info">Update</button>
     <button type="button" id="delete-item" class="btn btn-outline-info">Delete</button>
@@ -53,13 +61,15 @@ const newHireItem = () => {
     e.preventDefault();
 
     const reqBody = {
-      categoryId: $("#categories").val(),
       itemName: $("#name").val(),
       itemColor: $("#color").val(),
       dimensions: $("#size").val(),
       numberAvailable: $("#amount").val(),
       costPerHire: $("#cost").val(),
       available: $(`input[name="available"]:checked`).val(),
+      costToPurchase: $("#cost-to-business").val(),
+      supplier: $("#item-supplier").val(),
+      imgUrl: $("#image").val(),
     };
 
     const res = await $.ajax({

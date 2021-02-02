@@ -1,6 +1,10 @@
 import userLogin from "./userLogin";
 
 const registrationForm = `
+<div id="register-header" class="container">
+<h1 class="header-text">Register Now</h1>
+</div>
+<div id="new-user-div"
 <form id="new-user">
   <h4>Register</h4>
     <div class="form-group">
@@ -13,6 +17,7 @@ const registrationForm = `
     </div>
     <button type="submit" class="btn btn-outline-info">Register</button>
   </form>
+  </div
   `;
 
 const newUser = () => {

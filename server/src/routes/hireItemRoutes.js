@@ -1,6 +1,5 @@
 const express = require("express");
 const HireItemModel = require("../models/HireItemModel");
-const ItemCategoryModel = require("../models/ItemCategoryModel");
 
 const router = express.Router();
 
