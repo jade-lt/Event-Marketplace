@@ -3,7 +3,7 @@
 A working full-stack CRUD app for event planning/services/hire businesses, to keep track of inventory and current pricing, along with info on their own suppliers/cost to the business for each product. 
 
 The app includes log in/sign up functionality with encrypted passwords:
-![Image of Login page](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/login%20page.png)
+![Image of Login page](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/login-new.png)
 
 ![Image of rego page](https://github.com/jade-lt/Event-Marketplace/blob/main/images%20for%20read%20me/rego%20page.png)
 
